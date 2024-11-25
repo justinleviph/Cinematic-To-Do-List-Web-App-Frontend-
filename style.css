@@ -1,0 +1,192 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(45deg, #2b2d42, #8d99ae); /* Dark gradient background */
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 0.5s ease-in-out;
+}
+
+.hero {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+/* Input Fields */
+.inputs input, .inputs textarea, .inputs select, .inputs button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.inputs input:focus, .inputs textarea:focus, .inputs select:focus {
+  outline: none;
+  border-color: #ffcc00;
+}
+
+.inputs button {
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.inputs button:hover {
+  background-color: #ffbb00;
+}
+
+.inputs button:active {
+  transform: scale(0.98);
+}
+
+/* Task List Styling */
+ul {
+  list-style: none;
+  margin-top: 30px;
+  padding-left: 0;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+li:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+li.completed {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #888;
+  text-decoration: line-through;
+}
+
+li span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+li .task-details,
+li .task-due-date,
+li .task-location,
+li .task-priority {
+  font-size: 14px;
+  color: #ddd;
+}
+
+li .task-priority {
+  font-weight: 600;
+}
+
+/* Task Priority Colors */
+li .Low { border-left: 5px solid #6c757d; }
+li .Medium { border-left: 5px solid #ffc107; }
+li .High { border-left: 5px solid #dc3545; }
+
+/* Delete Button */
+li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+li button:hover {
+  background-color: #c82333;
+}
+
+li button:active {
+  transform: scale(0.95);
+}
+
+li button:focus {
+  outline: none;
+}
+
+/* Button and Task Interaction Animation */
+button, li button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover, li button:hover {
+  transform: scale(1.05);
+}
+
+/* Input Styles */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  padding: 10px;
+}
+
+/* Modal and Task Completion Effects */
+li.completed {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+li .completed .task-priority {
+  color: #aaa;
+}
+
+/* Miscellaneous */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  animation: fadeIn 1s ease-out;
+}
